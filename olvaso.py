@@ -1,4 +1,4 @@
-from employee import Employee
+from employee import Employee           # importáljuk a másik osztályt
 class App:
     def __init__(self):                 #konstruktor
         self.fileName = 'dolgozok.txt'
