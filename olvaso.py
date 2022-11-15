@@ -35,9 +35,9 @@ class App:
 
     # irassa ki a Szolnoki dolgozók neveit és fizetésüket
     def printSzolnokDatas(self):
-        print("Szolnokiak:")
+        print("Szolnokiak vagy Miskolciak:")
         for employee in self.employeeList:
-            if employee.city == 'Szolnok':
+            if employee.city == 'Szolnok' or employee.city == 'Miskolc':
                 print(employee.name, employee.salary)
 
 app = App()                           #objektum /app/ - konstruktor meghívása
