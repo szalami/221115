@@ -6,9 +6,9 @@ class App:
 
     def readFile(self):                 #metódus
         fp = open(self.fileName, 'r', encoding='UTF-8')
-        self.lines = fp.readlines()
+        lines = fp.readlines()
 
-        for line in self.lines:
+        for line in lines:
             (id, name, city, address, salary, birth) = line.split(':')
             employee = Employee(id, name, city, address, salary, birth)
             self.employeeList.append(employee)
@@ -24,9 +24,28 @@ class App:
                 sum = sum + int(employee.salary)
 
         print('Összeg:', sum)
-          
-        
+
+  #számoljuk meg a miskolciakat        
+    def countMiskolc(self):
+        count = 0
+        for employee in self.employeeList:
+            if employee.city == 'Miskolc':
+                count = count + 1
+        print("Miskolciak: ", count)  
+
+    # irassa ki a Szolnoki dolgozók neveit és fizetésüket
+    def printSzolnokDatas(self):
+        print("Szolnokiak:")
+        for employee in self.employeeList:
+            if employee.city == 'Szolnok':
+                print(employee.name, employee.salary)
 
 app = App()                           #objektum /app/ - konstruktor meghívása
 app.readFile()
 app.sumSalary()
+app.countMiskolc()
+app.printSzolnokDatas()
+
+
+
+
